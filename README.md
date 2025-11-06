@@ -2,7 +2,7 @@
 
 I built a Streamlit app that lets me ask questions across many PDFs and text files and get answers grounded in those sources. Under the hood it’s a Retrieval-Augmented Generation (RAG) pipeline using LangChain, FAISS, and an LLM (Gemini Pro by default; OpenAI/Anthropic/Llama are pluggable).
 
-✨ What it does
+# ✨ What it does
 
 📤 Upload one or more PDF/TXT files
 
@@ -14,11 +14,11 @@ I built a Streamlit app that lets me ask questions across many PDFs and text fil
 
 📎 (Optional) Show sources so I can see what supported the answer
 
-💡 Why I built it
+# 💡 Why I built it
 
 Jumping between pages is slow. I wanted a conversational interface that can pull evidence from multiple documents while keeping responses traceable to the original text.
 
-🧱 Features
+# 🧱 Features
 
 🗂️ Multi-file conversational QA: handles single-hop and multi-step questions across documents
 
@@ -56,14 +56,14 @@ pip install -r requirements.txt
 
 Create a .env file in the project root:
 
-# Default provider (Gemini)
+Default provider (Gemini)
 GOOGLE_API_KEY=<your-google-api-key>
 
-# Optional providers
+Optional providers
 OPENAI_API_KEY=<your-openai-key>
 ANTHROPIC_API_KEY=<your-anthropic-key>
 
-# Optional selector used in code (gemini | openai | anthropic | llama)
+Optional selector used in code (gemini | openai | anthropic | llama)
 LLM_PROVIDER=gemini
 
 4) Run
@@ -72,7 +72,7 @@ streamlit run app.py
 
 Open the local URL Streamlit prints to your terminal 🌐.
 
-🧭 How it works (under the hood)
+# 🧭 How it works (under the hood)
 
 Load & normalize text from PDFs/TXT
 
@@ -91,3 +91,14 @@ Design knobs
 🎯 Top-k: raise for recall (more context), lower for cost/latency
 
 🔁 Provider abstraction: switch vendors or go local without refactoring the app
+
+# ❓ FAQ
+
+Which file types are supported?
+PDF and TXT.
+
+Do I need a GPU?
+No. FAISS-CPU plus hosted LLMs work fine. For local OSS models, a GPU helps.
+
+Can I add citations?
+Yes—enable the sources panel or add a citation step in the chain.
