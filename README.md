@@ -102,3 +102,6 @@ No. FAISS-CPU plus hosted LLMs work fine. For local OSS models, a GPU helps.
 
 Can I add citations?
 Yes—enable the sources panel or add a citation step in the chain.
+
+resources:
+GURPREETKAURJETHRA
